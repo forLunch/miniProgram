@@ -1,0 +1,7 @@
+<!-- index.wxml -->
+<view class="container">
+    <view hover-class="none" class="module random">
+      <text>猜你想吃</text>
+    </view>
+    
+</view>

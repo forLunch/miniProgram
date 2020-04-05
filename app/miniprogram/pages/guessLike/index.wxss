@@ -1,14 +1,14 @@
 /**index.wxss**/
 
 page {
-  background: #fff;
+  background: #f6f6f6;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 .module-container{
   background: #fff;
-  /* border: 1px solid rgba(0, 0, 0, 0.1); */
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-left: none;
   border-right: none;
   padding-left: 32rpx;
@@ -20,14 +20,14 @@ page {
   line-height: 200rpx;
   float: left;
   margin: 32rpx 32rpx 0 0;
-  border-radius: 20rpx;
+  border-radius: 10%;
   font-family: PingFangSC-Medium,Tahoma,"Lucida Grande",Verdana,"Microsoft Yahei",STXihei,hei;
 }
 .module-container .module.random{
    background: -webkit-linear-gradient(left,#ffbc49,#ffd252);
 }
-.hover-random{
-   background: #fff;
+.module-container .module.random{
+   background: -webkit-linear-gradient(left,#ffbc49,#ffd252);
 }
 .module-container .module.rank{
   background: -webkit-linear-gradient(left,#fa5956,#fb8650);
