@@ -8,7 +8,7 @@ Page({
     logged: false,
     takeSession: false,
     requestResult: '',
-    stepInfoList: []//微信运动步数列表
+    todayStep: 0//微信运动步数列表
   },
 
   onLoad: function () {
@@ -36,6 +36,8 @@ Page({
         }
       }
     })
+
+    this.onGetRunData();
   },
 
   onGetUserInfo: function (e) {
@@ -50,6 +52,7 @@ Page({
   },
 
   onGetRunData: function () {
+    let that = this;
     // 调用云函数
     wx.cloud.callFunction({
       name: 'login',
@@ -70,13 +73,9 @@ Page({
             }
           }).then(data => {
             if (data.errMsg == 'cloud.callFunction:ok') {
-              console.log(data.result.todayStep);
-              wx.showToast({
-                title: '今日步数' + data.result.todayStep,
-                icon: '',
-                duration: 4000
+              that.setData({
+                todayStep: data.result.todayStep
               })
-
             }
 
           })

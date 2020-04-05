@@ -1,7 +1,18 @@
 <!-- index.wxml -->
 <view class="container">
-    <view hover-class="none" class="module random">
-      <text>猜你想吃</text>
-    </view>
-    
+  <view hover-class="none" class="module random">
+    <text>猜你想吃</text>
+  </view>
+  <view>
+    <text>{{userInfo.nickName}}</text>
+  </view>
+  <view>
+    <text>{{userInfo.gender}}</text>
+  </view>
+  <view>
+    <text>{{userInfo.province}}</text>
+  </view>
+  <view>
+    <text>{{todayStep}}</text>
+  </view>
 </view>
