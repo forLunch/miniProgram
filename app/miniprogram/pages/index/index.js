@@ -119,5 +119,40 @@ Page({
       }
     })
   },
+  onGetRunData: function () {
+    // 调用云函数
+    wx.cloud.callFunction({
+      name: 'login',
+      data: {},
+    }).then(login => {
+      let openid = login.result.openid;
+      wx.getWeRunData({
+        success(res) {
+          // 或拿 cloudID 通过云调用直接获取开放数据
+          const cloudID = res.cloudID
+          wx.cloud.callFunction({
+            name: 'runData',
+            data: {
+              weRunData: wx.cloud.CloudID(cloudID), // 这个 CloudID 值到云函数端会被替换
+              obj: {
+                shareInfo: wx.cloud.CloudID(cloudID), // 非顶层字段的 CloudID 不会被替换，会原样字符串展示
+              }
+            }
+          }).then(data => {
+            if (data.errMsg == 'cloud.callFunction:ok') {
+              console.log(data.result.todayStep);
+              wx.showToast({
+                title: '今日步数' + data.result.todayStep,
+                icon: '',
+                duration: 4000
+              })
+
+            }
+
+          })
+        }
+      })
+    })
+  }
 
 })
