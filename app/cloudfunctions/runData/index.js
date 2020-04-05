@@ -25,7 +25,7 @@ exports.main = (event, context) => {
   }
 
   return {
-    stepInfoList,
+    // stepInfoList,
     todayStep
 
   }

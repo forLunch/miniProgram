@@ -13,6 +13,9 @@
     <text>{{userInfo.province}}</text>
   </view>
   <view>
-    <text>{{todayStep}}</text>
+    <text>步数：{{todayStep}}</text>
+  </view>
+  <view >
+    <text>{{weatherData}}</text>
   </view>
 </view>
